@@ -1,6 +1,6 @@
 import './App.css'
 import Home from './views/Home'
-import Livros from './views/Livros'
+import Livros from './views/Livro'
 import NovoLivro from './views/NovoLivro'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
