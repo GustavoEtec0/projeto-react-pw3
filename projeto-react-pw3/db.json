@@ -1,0 +1,25 @@
+{
+    "book": [],
+    "categories": [
+        {
+            "id": "1",
+            "name": "Ficção cientifica"
+        },
+        {
+            "id": "2",
+            "name": "Ficção cientifica 2"
+        },
+        {
+            "id": "3",
+            "name": "Ficção cientifica 3"
+        },
+        {
+            "id": "4",
+            "name": "Ficção cientifica 4"
+        },
+        {
+            "id": "5",
+            "name": "Ficção cientifica 5"
+        }
+    ]
+}
