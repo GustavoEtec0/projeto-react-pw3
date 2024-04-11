@@ -1,25 +1,56 @@
 {
-    "book": [],
-    "categories": [
-        {
-            "id": "1",
-            "name": "Ficção cientifica"
-        },
-        {
-            "id": "2",
-            "name": "Ficção cientifica 2"
-        },
-        {
-            "id": "3",
-            "name": "Ficção cientifica 3"
-        },
-        {
-            "id": "4",
-            "name": "Ficção cientifica 4"
-        },
-        {
-            "id": "5",
-            "name": "Ficção cientifica 5"
-        }
-    ]
+  "books": [
+    {
+      "id": "df16",
+      "nome_livro": "asdasd",
+      "nome_autor": "dasdasd",
+      "descricao": "asdasd",
+      "category": {
+        "id": "2",
+        "category": "Ficção cientifica 2"
+      }
+    },
+    {
+      "id": "1b14",
+      "nome_livro": "asdasd",
+      "nome_autor": "dasdasd",
+      "descricao": "asdasd",
+      "category": {
+        "id": "2",
+        "category": "Ficção cientifica 2"
+      }
+    },
+    {
+      "id": "2766",
+      "nome_livro": "asfasf",
+      "nome_autor": "asfasd",
+      "descricao": "asfasf",
+      "category": {
+        "id": "5",
+        "category": "Ficção cientifica 5"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Ficção cientifica"
+    },
+    {
+      "id": "2",
+      "name": "Ficção cientifica 2"
+    },
+    {
+      "id": "3",
+      "name": "Ficção cientifica 3"
+    },
+    {
+      "id": "4",
+      "name": "Ficção cientifica 4"
+    },
+    {
+      "id": "5",
+      "name": "Ficção cientifica 5"
+    }
+  ]
 }
