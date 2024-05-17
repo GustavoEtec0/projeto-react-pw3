@@ -1,14 +1,29 @@
-import React from 'react'
+import React from "react";
+import "./style.css";
 
-export default function CardBook({ id, livro, autor, category }) {
+export default function CardBook({
+  id,
+  livro,
+  autor,
+  category,
+  handlerRemove,
+}) {
+  const remove = (e) => {
+    handlerRemove(id);
+  };
   return (
-    <div>
+    <div className="book_card">
       <h4>{livro}</h4>
       <p>Autor: </p>
       {autor}
-      <p>
-        <span>Categoria: </span> {category}
+      <p className="category_text">
+        <span />
+        Categoria: {category}
       </p>
+
+      <div className="book_card_actions">
+        <button onClick={remove}>Excluir</button>
+      </div>
     </div>
-  )
+  );
 }
