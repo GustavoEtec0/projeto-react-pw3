@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 export default function CardBook({
   id,
@@ -22,6 +23,7 @@ export default function CardBook({
       </p>
 
       <div className="book_card_actions">
+        <Link to={`/editar-livro/${id}`}>Editar</Link>
         <button onClick={remove}>Excluir</button>
       </div>
     </div>

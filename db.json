@@ -9,6 +9,16 @@
         "id": "2",
         "category": "Ficção cientifica 2"
       }
+    },
+    {
+      "id": "a420",
+      "nome_livro": "aasdfasd",
+      "nome_autor": "asdasdasd",
+      "descricao": "asdasdasd",
+      "category": {
+        "id": "1",
+        "category": "Ficção cientifica"
+      }
     }
   ],
   "categories": [
