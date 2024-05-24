@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Select from "../../components/Form/Select";
 import Input from "../../components/Form/Input";
 
 export default function EditarLivro(params) {
+  const navigate = useNavigate();
   const [book, setBook] = useState({});
   const [categories, setCategories] = useState([]);
 
@@ -43,6 +44,24 @@ export default function EditarLivro(params) {
     fetchCategories();
   }, []);
 
+  const editBook = (book) => {
+    fetch(`http://localhost:5000/books/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(book),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setBook(data);
+        navigate("/livros", { state: "Livro editado com sucesso" });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   function handleChangeBook(e) {
     setBook({ ...book, [e.target.name]: e.target.value });
   }
@@ -57,10 +76,15 @@ export default function EditarLivro(params) {
     });
   }
 
+  function submit(e) {
+    e.preventDefault();
+    editBook(book);
+  }
+
   return (
     <div className="book_container">
       <h1>editarLivro</h1>
-      <form>
+      <form onSubmit={submit}>
         <Input
           type="text"
           name="nome_livro"
@@ -94,7 +118,7 @@ export default function EditarLivro(params) {
           option={categories}
           handlerOnChange={handleChangeCategories}
         />
-        <input type="submit" value="cadastra livro" />
+        <input type="submit" value="editar livro" />
       </form>
     </div>
   );
