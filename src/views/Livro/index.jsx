@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./style.css";
 import Message from "../../components/Message";
-import Container from "../../components/Container";
 import CardBook from "../../components/CardBook";
 
 export default function Livros() {
@@ -10,24 +9,30 @@ export default function Livros() {
   const [deleteMessage, setDeleteMessage] = useState("");
 
   const fetchData = async () => {
-    await fetch("http://localhost:5000/books", {
+    await fetch("http://localhost:5000/livros", {
       method: "GET",
+      mode: "cors",
       headers: {
         "Content-type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
       },
     })
       .then((res) => res.json())
-      .then((data) => setBook(data))
+      .then((data) => setBook(data.data ))
       .catch((err) => {
         console.log(err);
       });
   };
 
   const removeBook = async (id) => {
-    await fetch(`http://localhost:5000/books/${id}`, {
+    await fetch(`http://localhost:5000/livros/${id}`, {
       method: "DELETE",
+      mode: "cors",
       headers: {
         "Content-type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
       },
     })
       .then((res) => res.json())
@@ -61,9 +66,9 @@ export default function Livros() {
         <CardBook
           key={data.id}
           id={data.id}
-          livro={data.nome_livro}
-          autor={data.nome_autor}
-          category={data.category.category}
+          livro={data.titulo_livro}
+          autor={data.autor_livro}
+          // category={data.category.category}
           handlerRemove={removeBook}
         />
       ))}
